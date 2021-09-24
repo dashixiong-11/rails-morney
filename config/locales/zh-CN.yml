@@ -1,0 +1,15 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: 密码不能为空
+              too_short: 密码不能少于 6 个字符
+            email:
+              blank: 邮箱不能为空
+              invalid: 邮箱必须含有 @ 字符
+            password_confirmation:
+              blank: 请确认密码
+              confirmation: 密码不匹配
