@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # 等价于下面 resources :users
 
   resources :users
+  resources :sessions, only: [:create, :destroy]
 end

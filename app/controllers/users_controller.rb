@@ -7,8 +7,6 @@ class UsersController < ApplicationController
   end
 
   def create_params
-    p 'params'
-    p params
     params.permit(:email, :password, :password_confirmation)
   end
 end
