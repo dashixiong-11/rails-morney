@@ -7,6 +7,7 @@ zh-CN:
             email:
               invalid: 邮箱格式不合法
               blank: 邮箱不能为空
+              not_fund: 找不到用户
             password:
               too_short: 密码不能少于 6 个字符
               blank: 密码不能为空
