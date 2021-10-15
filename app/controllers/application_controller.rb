@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::API
+  def current_user
+    @current_user ||= User.find_by_id session[:current_user_id] # User.find 如果参数为空会报错 所以用find_by_id
+  end
   def render_resource(resource)
+    return head 404 if resource.nil?
     if resource.errors.empty?
       render json: { resource: resource }, status: 200
     else
