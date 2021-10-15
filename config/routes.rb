@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get '/hello', to: 'first#hello'
+  get '/me', to: 'users#me'
+
 
   # get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#show'
