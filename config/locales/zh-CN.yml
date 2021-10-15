@@ -11,6 +11,7 @@ zh-CN:
             password:
               too_short: 密码不能少于 6 个字符
               blank: 密码不能为空
+              mismatch: 密码不匹配
   activerecord:
     errors:
       models:
