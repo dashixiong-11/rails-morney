@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/hello', to: 'first#hello'
   get '/me', to: 'users#me'
+  delete '/sessions', to: 'sessions#destroy'
 
 
   # get '/users', to: 'users#index'
@@ -11,5 +12,5 @@ Rails.application.routes.draw do
   # 等价于下面 resources :users
 
   resources :users
-  resources :sessions, only: [:create, :destroy]
+  resources :sessions, only: [:create]
 end
