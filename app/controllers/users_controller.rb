@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def me
       render_resource current_user
   end
-  def create_params
+  def create_params # 拿到参数
     params.permit(:email, :password, :password_confirmation)
   end
 end
