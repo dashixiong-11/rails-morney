@@ -5,7 +5,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: fang
   password: 123456
-  host: 192.168.20.123
+  host: 192.168.20.214
   port: 5001
 
 development:

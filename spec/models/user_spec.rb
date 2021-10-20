@@ -39,4 +39,9 @@ RSpec.describe User, type: :model do
     expect(UserMailer).to have_received(:welcome_email) # 期待此方法被调用了
     expect(x).to have_received(:deliver_later)
   end
+
+  it '传入的邮箱为空字符串时 提示邮箱不能为空' do
+    user = User.create email: ''
+    expect(user.errors.details[:email].length).to eq 1
+  end
 end
