@@ -11,8 +11,10 @@ RspecApiDocumentation.configure do |config|
   }
 end
 module SpecTestHelper
-  def sign_in(email, password)
-    post '/session', params: { email: email, password: password }
+  def login_in(user = nil)
+    user ||= User.create!(email: 'spec_test_helper@qq.com', password: '123456', password_confirmation: '123456')
+    post '/sessions', params: { email: user.email, password: user.password }
+    user
   end
 end
 

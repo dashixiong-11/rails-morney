@@ -18,8 +18,7 @@ RSpec.describe "Users", type: :request do
   end
 
   it 'get current user with login' do
-    user = User.create! email: '1@qq.com', password: '123123', password_confirmation: '123123'
-    post '/sessions', params: { email: '1@qq.com', password: '123123' }
+    user = login_in
     get '/me'
     body = JSON.parse response.body
     expect(response).to have_http_status :ok
