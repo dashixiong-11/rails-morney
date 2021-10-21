@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>旺财API文档</title>
-  <meta charset="utf-8">
-  <style>
-    
+  <head>
+    <title>Record API</title>
+    <meta charset="utf-8">
+    <style>
+      
 body {
   font-family: Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -39,7 +39,7 @@ pre {
 
 td.required .name:after {
   float: right;
-  content: &quot;required&quot;;
+  content: "required";
   font-weight: normal;
   color: #F08080;
 }
@@ -102,42 +102,37 @@ table th, table td {
   text-align: left;
 }
 
-  </style>
-</head>
-<body>
-<div class="container">
-  <h1>旺财API文档</h1>
-  
-    请求数据格式：默认使用JSON格式，但也支持 application/x-www-form-urlencoded 格式。
-    状态码：200表示成功，400表示失败，422表示表单数据校验不通过，其他状态码请查阅维基百科。
-  
-  <div class="article">
-    <h2>Record</h2>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Record API</h1>
 
-    <ul>
-      <li>
-        <a href="record/创建记录.html">创建记录</a>
-      </li>
-      <li>
-        <a href="record/删除记录.html">删除记录</a>
-      </li>
-      <li>
-        <a href="record/获取记录.html">获取记录</a>
-      </li>
-      <li>
-        <a href="record/获取记录详情.html">获取记录详情</a>
-      </li>
-    </ul>
-  </div>
-  <div class="article">
-    <h2>Users</h2>
+      <div class="article">
+        <h2>删除记录</h2>
+        <h3>DELETE /records/:id</h3>
 
-    <ul>
-      <li>
-        <a href="users/创建用户（注册）.html">创建用户（注册）</a>
-      </li>
-    </ul>
-  </div>
-</div>
-</body>
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Content-Type: application/json
+Cookie: _interslice_session=chLU5Ir%2BmAB%2Fc8xUC0CzRGco6bNISk3BUsWss%2FFmK%2BwF0yoGUXJEWxxB3F27Y50u4R9Qb6b8%2FHOyDMC81YxX3FEeDh8FE4wlftYTMxgfze8UmGcrOp%2Fk8EkCgUhURN7kORQfy2okLi54o5OiSmlVQfthCUf%2FMEEJewwAD%2Finqep4uc3jUT7RbH010nclwFbXFiIbnqroNEal%2FAQVngno9qsDZIVaGghgiBxR9nhf2%2F6wmd0xQ2UeN9K8JQ%3D%3D--WcKbyzbrlQTcZLwZ--amD9D4jWjIsFczyG7FR01g%3D%3D</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">DELETE /records/69</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json
+Set-Cookie: _interslice_session=RNf%2FOYHWpCaVbgX6xIqizeiDuyvDIeiQSi5RSB000%2FgL247fC7XC2D2uOdvIfY2CROCVINBGVyiTWQRzajTJD00aGkgXmEpIwr1a0yhYFPW0EpJ6JaUmrBWS7l1Z2p4Sf5QxYHpt5zmmKTTgKzws5f%2FRpJPLT8lZxDsEbKnEVR1%2Fnh6pcvj6TbFO8DEkVSlOWYeZwSqtUH2WgN8A%2Bt0aLfkm4F9omjOneLaOBWiUye9FqVY%2F1ozRJeBAPw%3D%3D--Zt4qId5ObccU1XKD--1K4GPik9P6B4VnGI53PqAQ%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+      </div>
+    </div>
+  </body>
 </html>

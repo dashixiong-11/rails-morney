@@ -109,8 +109,8 @@ table th, table td {
       <h1>Record API</h1>
 
       <div class="article">
-        <h2>创建记录</h2>
-        <h3>POST /records</h3>
+        <h2>获取记录</h2>
+        <h3>GET /records</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,27 +122,11 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
-                    <span class="name">amount</span>
+                <td>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">金额</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">category</span>
-                </td>
-                <td>
-                  <span class="description">类型:1 outgoings|2 income</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">notes</span>
-                </td>
-                <td>
-                  <span class="description">备注</span>
+                  <span class="description">页码</span>
                 </td>
               </tr>
             </tbody>
@@ -153,32 +137,66 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=sJNG7pR6g%2FynugsBAb0CW9NexlayPT0Q9QO%2BzkqHHrr%2F6085kXqes39jDUfwJveyNweiqtFkpBIlQGat9ZqRiVF2NSv5AsnAk3R%2B6J4wVWhAdJ4TDINyVesThUGf32V4kK5Trn0E%2BAWOhnU2vSv5YfSRxfCG7p2ttMxHELkStn9usaI6FN1ecOvQ5Iw2irnc53zzRSKyQAD1L2HhlQgJZCqTcSVibD341xwkgJSq5gxOOtTZOARBGGJrmw%3D%3D--xnVBHPtCK5wrrmsz--%2BZ0XX81siOMwqWNczeywLQ%3D%3D</pre>
+Cookie: _interslice_session=AYfzGnCD120AEDiO%2FCPbQW%2Bqhbz4E5Fr2d2f4xo%2FV0xtPmFkow1gh%2FX3AvYEws32RpSTo8WDiMDfOFR%2BQK%2BkN5c5m8cO2BPCKqM3VGCmw0jV76F9SRWfwbl9LnWhzBMqtNkIGaowqjjWrFwY5pc5TlZu%2BON%2B8fBSSdICtXY01NLfluvqCm2Z7XRXxmCCV5LpkFgeneAv2A%2BiQcAQm8zqg3eCjMDYzU%2BSgAIPsj4NOktiD%2BTXQka0xxdpew%3D%3D--39ddlb0RQvengg0E--B9lyYsTiB2eMCx%2FguMl2Rg%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">GET /records?page=1</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 1</pre>
 
-            <h4>Body</h4>
-            <pre class="request body">{"amount":1000,"category":"outgoings","notes":"备注"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=oi05zVxMZkuue73nKf7Z%2FluWth%2B7cmeSOTHSphsV4PbMfXuy9S5RoDJZjwRsP47D2nF%2FeC%2BF%2BnQ0BAUiHwVvahFPsuEGF%2F3yn%2BaVvtqY5Y8jthK4CdGJYF72MzJuHzvreVKeD9ioDKePEwzCuk%2FrECMsu9Q8K4YWk%2F0GYi6g1m3a08LTAFYlCkbAcgMHvoxIyofTISf6fcPvB%2FCm6wXTT3kvh5JpCw%2Fy5tqTC5vF7R5e%2FvGsn%2FbuVlrKBw%3D%3D--dyE%2FnZPPDFdXCcKj--ic4oxPIV8DzO6FjvotL2lg%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+Set-Cookie: _interslice_session=cujL%2BV27zC96roKfaa3wG0t8eFX8zbIygbVE09wujS%2BT%2Fa9FxTuD2vQd5gCOVFRC%2FxZrdjwq57W2sKU8keUS2R%2Fo4lsc%2ByEak3xw%2FZWsWcDwBnUhS0WCLFOeQ27CNGSHrbMCtCNs4vFERDfVaTkF1V6BrCNnXlmSI2N4o5Lg55JxIpU6b5Md1jHyHs20dDSvRqgAoGt2TZzWwMO4LFI9aulJkbdjCSf6dsHsxocFUEEZpT%2FEw0uVnu5v%2Bg%3D%3D--0%2FWeWYYRNbLHgtO6--ATxWExoh0ldRL6gqP9sZFw%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;resource&quot;: {
-    &quot;id&quot;: 68,
-    &quot;amount&quot;: 1000,
-    &quot;category&quot;: &quot;outgoings&quot;,
-    &quot;notes&quot;: &quot;备注&quot;,
-    &quot;created_at&quot;: &quot;2021-10-21T10:03:50.725Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-21T10:03:50.725Z&quot;
-  }
+  &quot;resources&quot;: [
+    {
+      &quot;id&quot;: 44,
+      &quot;amount&quot;: 10000,
+      &quot;category&quot;: &quot;income&quot;,
+      &quot;notes&quot;: &quot;备注&quot;,
+      &quot;created_at&quot;: &quot;2021-10-21T09:59:46.865Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-21T09:59:46.865Z&quot;
+    },
+    {
+      &quot;id&quot;: 45,
+      &quot;amount&quot;: 10000,
+      &quot;category&quot;: &quot;income&quot;,
+      &quot;notes&quot;: &quot;备注&quot;,
+      &quot;created_at&quot;: &quot;2021-10-21T09:59:46.871Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-21T09:59:46.871Z&quot;
+    },
+    {
+      &quot;id&quot;: 46,
+      &quot;amount&quot;: 10000,
+      &quot;category&quot;: &quot;income&quot;,
+      &quot;notes&quot;: &quot;备注&quot;,
+      &quot;created_at&quot;: &quot;2021-10-21T09:59:46.875Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-21T09:59:46.875Z&quot;
+    },
+    {
+      &quot;id&quot;: 47,
+      &quot;amount&quot;: 10000,
+      &quot;category&quot;: &quot;income&quot;,
+      &quot;notes&quot;: &quot;备注&quot;,
+      &quot;created_at&quot;: &quot;2021-10-21T09:59:46.879Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-21T09:59:46.879Z&quot;
+    },
+    {
+      &quot;id&quot;: 48,
+      &quot;amount&quot;: 10000,
+      &quot;category&quot;: &quot;income&quot;,
+      &quot;notes&quot;: &quot;备注&quot;,
+      &quot;created_at&quot;: &quot;2021-10-21T09:59:46.883Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-21T09:59:46.883Z&quot;
+    }
+  ]
 }</pre>
       </div>
     </div>
