@@ -75,4 +75,21 @@ RSpec.describe "Record", type: :request do
       expect(response.status).to eq 404
     end
   end
+
+  context 'update' do
+    it 'can not update a record without sign in' do
+      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      patch "/records/#{record.id}", params: { amount: 20000, category: 'outgoings', notes: '更新了' }
+      expect(response.status).to eq 401
+    end
+
+    it 'can update a record with sign in' do
+      login_in
+      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      patch "/records/#{record.id}", params: { amount: 20000, category: 'outgoings', notes: '更新了' }
+      body = JSON.parse response.body
+      expect(body['resource']['amount']).to eq 20000
+      expect(response.status).to eq 200
+    end
+  end
 end
