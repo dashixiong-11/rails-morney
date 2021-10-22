@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Record API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Record API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>获取记录详情</h2>
-        <h3>GET /records/:id</h3>
+        <h2>删除标记</h2>
+        <h3>DELETE /taggings/:id</h3>
 
 
 
@@ -118,31 +118,20 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=RDIm5lVWqHz5019X74a1K0pj4Klc%2FZ%2FfWUTv%2Bi3t%2FXPuAUJ%2FTHjNwh0Pek%2BkUW8k6q%2FFeGarFPB0AXB07A56q%2FdIPJXsp1gUhG8q160SOmFtvpGQjYypNp3UldL7ZXobHHTayuh%2FkcdmC6WWlGxt4q2zQJwk9zedzD2PbHoBtlNy3MrqZauZDam%2BVGqbWuRwB5qxWlmsHOgeIX5YEmhFBaFaJ%2BV6Mp1SFNEkWyik6XHqNbLv8Ly7ucZLHg%3D%3D--I9NIsg5eiYVMyp4K--4L%2F9YGTxJlCsBcLtzVlzrg%3D%3D</pre>
+Cookie: _interslice_session=KEsVeuYIPzDdeYAPF5Xl4vCKC2KSn895tGnru5p7B%2FppHkoCnYYzvgN%2BS%2FI9ApIP7ik7PzBzma47kHsK0t1YqQQHE%2F3pSAvOYXWpIHnc7KHmb0vEQ6hkPqggEieW%2Fojbg0BReOoK0H%2BJbaXwbGZCqJ1tmNm%2F0XHBUGUBU%2FxQ5BTQIMwIyVUb25ZqCv2mzZhH6s1jVx52uqV%2BPQXBxdWDtDnGSFDDSpLY4w9RG9aO%2BcaP0rJN7LR%2FcQxfPg%3D%3D--HnkywRaW%2FbNz7sEU--GU0PtU%2FkL5vZaNyYcMtg9w%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records/1246</pre>
+          <pre class="request route highlight">DELETE /taggings/687</pre>
 
 
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=SDCnYMLqKrct8xG3m9LBTKrgTBRpih57lsKxTovrxYxsq5%2BLD13hnuQdxGok%2FLqHuEa%2B1%2BWUjjddTFnfRguTBCo0SYJCyOtmkKwy50tqrhFbI%2B7Jxz8WdbHaX5E4g%2BqMKTFbl0NrEIP1CSKh%2FbYREsroz%2FLXvrI3U%2BfXiJckXmd5oCc5idvzPIdMDu%2FXKs1jowhkCHC4YJlygz61MyDyIbIMkwSaO8MaliufeAvSxBm1pGbJ4D2v7YY4PQ%3D%3D--M%2FQBWQ02n51vn5v6--KZVx%2FTgN%2BkNxnuMRfiZzUA%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+              <pre class="response headers">Content-Type: application/json
+Set-Cookie: _interslice_session=A9ThmpMpm7TOO8LRxx6wF1Gg0WBmBqrUa9BWHKfTF7NwiaAM69c1jYgalqSdB6aTRRpUwAdSPbhjzyA5iqRLXgjPOrs6GKQVa%2BJ5DADmj9TYpLXAHLTjC7uOZ4%2B9yDEXKZr0FukWHeRg9sCQ4iFVJfp8KQb2hD7lG0C4%2BnoChm%2BnVfhp8LfuLcnkIjQyVD965N9YVbQYKciPhlHrAG2L8jU03iyaziZoO%2F7eVoRaBzM7JULWAleHAQOfEw%3D%3D--5fK6BS%2FSWSg8K8LI--EMX%2Fc0sVLO5qaSejrVb6dA%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
-              <h4>Body</h4>
-              <pre class="response body">{
-  &quot;resource&quot;: {
-    &quot;id&quot;: 1246,
-    &quot;amount&quot;: 100000,
-    &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: &quot;备注&quot;,
-    &quot;created_at&quot;: &quot;2021-10-22T11:12:58.181Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-22T11:12:58.181Z&quot;
-  }
-}</pre>
       </div>
     </div>
   </body>

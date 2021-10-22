@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :users
   resources :records
   resources :tags
-  resources :taggings
+  resources :taggings, except: [:update] #排除 update 路由
   resources :sessions, only: [:create]
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Record API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Record API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>更新记录</h2>
-        <h3>PATCH /records/:id</h3>
+        <h2>获取标记</h2>
+        <h3>GET /taggings</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,27 +122,11 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
-                    <span class="name">amount</span>
+                <td>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">金额</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">category</span>
-                </td>
-                <td>
-                  <span class="description">类型:1 outgoings|2 income</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">notes</span>
-                </td>
-                <td>
-                  <span class="description">备注</span>
+                  <span class="description">页码</span>
                 </td>
               </tr>
             </tbody>
@@ -153,32 +137,61 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=W6MRsmXHHYyU5NEbjoqtgvR7GWycAYR4JmyYk5QYCM0JWWI1tF8z14WECSlhJMOkGGJYZ7W0WfirD3qKEWFrkiGJ%2BGU782K%2Fibf%2F9U54jxeUC4544Hg2zk7ZngJaZRO0t3FHW9upryWI6fJIupK4H5HFSbnE4hXU%2BqkvaxS5EytKcKwU8J7lFZ1roIHKfmRM8l0rKoCz%2BRsIVpzEVwa%2FwVhpbNj4H10FFNqWD5RUsB33w%2FqztQ6nnFCz0Q%3D%3D--cwNckMp6S2xnPHrE--QxuUg67Lz6P9VlOriCIq9w%3D%3D</pre>
+Cookie: _interslice_session=I5Qmov9lSHPRRC%2BQP2UorqFahu6wUnKh3EsDLqKB2vyqJoKrpjQm8KzZYxWi92GYc253Ccp8STsm0NWzMtuUol0JI81Ugyy8sSk3YqSLu9r2t6V0UPzgaBtoTVvki99gMMjZWTGitXJqMFf3Fjt6D6cQMXsrxovvszxI9Sa66G5%2Baz57eFVlMHypG6u5NQr8uQ4PGJ9XN7kRMATONEkCuV1oTc2zeX5w4%2BVWMUqOIadeSB%2FAlyxS7eoAHg%3D%3D--9hhkHMkVN72f%2FaC%2F--0x%2B%2BMyOiap9%2FOgqgRE0YWA%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">PATCH /records/1247</pre>
+          <pre class="request route highlight">GET /taggings?page=1</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 1</pre>
 
-            <h4>Body</h4>
-            <pre class="request body">{"amount":20000,"category":"income","notes":"更新"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=khRadbsi%2FPicB1mr25M5JRewdw4nRwG4Na40dhABpR%2FQeAfoQEdOU2S18n4rP1fRwxG9HsI8D4P3nUaSJiZ5Bi3IlBZPTtsYE2Np7ZdqiJWQ6loTh41LpAEtGNK%2FtxRFiJ0lauNRt9b1T9jbrrfy22X1gEdGTxFZg1UCUjlRIFssvuBapsXjOk7NlRVlCe%2B7fddwFgHM6OhQaA70SgDW4BIcByGTHysSkchcw1JCOmSR%2BMODVVz7O0Sg5w%3D%3D--UMLquf%2BwPjoFoebW--2vpRnBKilO%2BYC0dpje1Nog%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+Set-Cookie: _interslice_session=VzMcB2eVz6e2YSF2kZS0ec0%2BAZvVzqleG8wT7jfsrVtbu2uFqvM%2BzxSoIUsVuTGRv0429KWofqkBlLU86DJlLumRKiYF%2FcGt%2B5IdoNHK%2FMmsP%2Fg%2BnNv3xPpJg2eSd8I8LFNXQ%2BKHT8sHw0BLulT7gevdNeP04Kd6TLEA3f5%2FgK4IWC1lIxcaB%2FbK30mmb4VO5sn96XS7wlsw6NY8Sm0FLxoFaDwUwQS6BwFXimfphEQl0TLWpJmE2Y3vlQ%3D%3D--aWEX3HQaxyhoYeM7--oWeLs6IUWErw2SI%2FECPrpQ%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;resource&quot;: {
-    &quot;amount&quot;: 20000,
-    &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: &quot;更新&quot;,
-    &quot;id&quot;: 1247,
-    &quot;created_at&quot;: &quot;2021-10-22T11:12:58.208Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-22T11:12:58.216Z&quot;
-  }
+  &quot;resources&quot;: [
+    {
+      &quot;id&quot;: 675,
+      &quot;tag_id&quot;: 1521,
+      &quot;record_id&quot;: 1233,
+      &quot;created_at&quot;: &quot;2021-10-22T11:12:57.847Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T11:12:57.847Z&quot;
+    },
+    {
+      &quot;id&quot;: 676,
+      &quot;tag_id&quot;: 1522,
+      &quot;record_id&quot;: 1234,
+      &quot;created_at&quot;: &quot;2021-10-22T11:12:57.861Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T11:12:57.861Z&quot;
+    },
+    {
+      &quot;id&quot;: 677,
+      &quot;tag_id&quot;: 1523,
+      &quot;record_id&quot;: 1235,
+      &quot;created_at&quot;: &quot;2021-10-22T11:12:57.874Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T11:12:57.874Z&quot;
+    },
+    {
+      &quot;id&quot;: 678,
+      &quot;tag_id&quot;: 1524,
+      &quot;record_id&quot;: 1236,
+      &quot;created_at&quot;: &quot;2021-10-22T11:12:57.887Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T11:12:57.887Z&quot;
+    },
+    {
+      &quot;id&quot;: 679,
+      &quot;tag_id&quot;: 1525,
+      &quot;record_id&quot;: 1237,
+      &quot;created_at&quot;: &quot;2021-10-22T11:12:57.899Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T11:12:57.899Z&quot;
+    }
+  ]
 }</pre>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Record API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Record API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>获取记录详情</h2>
-        <h3>GET /records/:id</h3>
+        <h2>获取标记详情</h2>
+        <h3>GET /taggings/:id</h3>
 
 
 
@@ -118,10 +118,10 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=RDIm5lVWqHz5019X74a1K0pj4Klc%2FZ%2FfWUTv%2Bi3t%2FXPuAUJ%2FTHjNwh0Pek%2BkUW8k6q%2FFeGarFPB0AXB07A56q%2FdIPJXsp1gUhG8q160SOmFtvpGQjYypNp3UldL7ZXobHHTayuh%2FkcdmC6WWlGxt4q2zQJwk9zedzD2PbHoBtlNy3MrqZauZDam%2BVGqbWuRwB5qxWlmsHOgeIX5YEmhFBaFaJ%2BV6Mp1SFNEkWyik6XHqNbLv8Ly7ucZLHg%3D%3D--I9NIsg5eiYVMyp4K--4L%2F9YGTxJlCsBcLtzVlzrg%3D%3D</pre>
+Cookie: _interslice_session=dJdS4mz%2Bf4fKnfOuMsqhi8xuBNHiByQ%2BeJq%2BR70BykmAgdWXNEZB0x8FgADLzXIzXHbUMzDDNxd0%2Feh4DNwmTWsYT2%2F%2F5i0LMWHZye45zMvsFZPpMYINGudE4bQXRpIS2A5WwqgqNqrHfwCpDW%2FjkEGiUiKWv4B9wuv6ZUWtMzzza7DEBfDCi8DS0lcYcDHSxet2Sxw%2FUtIEZ4s%2BMdSNNY2pxzbL0%2BPKo%2FOaqWodmCuWT4QI8fHRRkfiUg%3D%3D--hhjf91FHbW3FmpDT--e2k8S2dR8jlC5V62TiZLFg%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records/1246</pre>
+          <pre class="request route highlight">GET /taggings/699</pre>
 
 
 
@@ -129,18 +129,18 @@ Cookie: _interslice_session=RDIm5lVWqHz5019X74a1K0pj4Klc%2FZ%2FfWUTv%2Bi3t%2FXPu
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=SDCnYMLqKrct8xG3m9LBTKrgTBRpih57lsKxTovrxYxsq5%2BLD13hnuQdxGok%2FLqHuEa%2B1%2BWUjjddTFnfRguTBCo0SYJCyOtmkKwy50tqrhFbI%2B7Jxz8WdbHaX5E4g%2BqMKTFbl0NrEIP1CSKh%2FbYREsroz%2FLXvrI3U%2BfXiJckXmd5oCc5idvzPIdMDu%2FXKs1jowhkCHC4YJlygz61MyDyIbIMkwSaO8MaliufeAvSxBm1pGbJ4D2v7YY4PQ%3D%3D--M%2FQBWQ02n51vn5v6--KZVx%2FTgN%2BkNxnuMRfiZzUA%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+Set-Cookie: _interslice_session=aX9rk0YoMSCDF0uGEzecGN94MUe1OrWzxMy3E8gYy9Px0UsaWnbnLiv%2BX5YLVRy%2BxbP69smLhcTXEYzLBl8oHjKMqYHK6TDHKtR5oUY%2FEkTRaT9nU4vm3l5gj4%2FnrhLQQL7XZ85mg2%2Bt83CAMgtRypTXoPM5olwL8jjTPWQhtu4lOCaELNHxS0O8l89vnU6gGnT7EP5VIAtMtw1MiDJyXkgjMaZkZL5VMNJ4Qfkoj%2FEX2aEB21QECQlWag%3D%3D--pa4J6lB5UEagO1Gu--FA%2F9Nb3H0xjNy2PkTty14w%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;resource&quot;: {
-    &quot;id&quot;: 1246,
-    &quot;amount&quot;: 100000,
+    &quot;id&quot;: 699,
+    &quot;amount&quot;: 10000,
     &quot;category&quot;: &quot;income&quot;,
     &quot;notes&quot;: &quot;备注&quot;,
-    &quot;created_at&quot;: &quot;2021-10-22T11:12:58.181Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-22T11:12:58.181Z&quot;
+    &quot;created_at&quot;: &quot;2021-10-22T09:35:10.908Z&quot;,
+    &quot;updated_at&quot;: &quot;2021-10-22T09:35:10.908Z&quot;
   }
 }</pre>
       </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Record API</title>
+    <title>Taggings API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,41 +106,69 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Record API</h1>
+      <h1>Taggings API</h1>
 
       <div class="article">
-        <h2>获取记录详情</h2>
-        <h3>GET /records/:id</h3>
+        <h2>创建标记</h2>
+        <h3>POST /taggings</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">tag_id</span>
+                </td>
+                <td>
+                  <span class="description">标签ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="required">
+                    <span class="name">record_id</span>
+                </td>
+                <td>
+                  <span class="description">记录ID</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=RDIm5lVWqHz5019X74a1K0pj4Klc%2FZ%2FfWUTv%2Bi3t%2FXPuAUJ%2FTHjNwh0Pek%2BkUW8k6q%2FFeGarFPB0AXB07A56q%2FdIPJXsp1gUhG8q160SOmFtvpGQjYypNp3UldL7ZXobHHTayuh%2FkcdmC6WWlGxt4q2zQJwk9zedzD2PbHoBtlNy3MrqZauZDam%2BVGqbWuRwB5qxWlmsHOgeIX5YEmhFBaFaJ%2BV6Mp1SFNEkWyik6XHqNbLv8Ly7ucZLHg%3D%3D--I9NIsg5eiYVMyp4K--4L%2F9YGTxJlCsBcLtzVlzrg%3D%3D</pre>
+Cookie: _interslice_session=fbVGOqb9Vlw4W9pXISwGOcMe6e3U7aK5Hc4ZkzLnm7zPa8RNnAxDOPXA5pq7tBUuaN9yxmcjeiYUF5bMwXEKDv0%2BIeHPi659Z3MnMnJ6EwJIWpZp%2BsimKaRqGzUpS%2BJhz57EB7OU2zTAaK6K1bSCZRFRzN5LO%2FVRmewpDIBhHsMHLBu7i6KCtGQw%2FgkApgSFpKDNEz9v7GIaw7JgltTEvXcIj%2FnYakY6gRa6NW5gO%2Fu5fdMCZjzCnABJIA%3D%3D--N8yVQ1U%2BxghV7CNY--s5ODmnM3Bkre%2Fr%2FeNfEZAQ%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /records/1246</pre>
+          <pre class="request route highlight">POST /taggings</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">{"tag_id":1536,"record_id":1248}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=SDCnYMLqKrct8xG3m9LBTKrgTBRpih57lsKxTovrxYxsq5%2BLD13hnuQdxGok%2FLqHuEa%2B1%2BWUjjddTFnfRguTBCo0SYJCyOtmkKwy50tqrhFbI%2B7Jxz8WdbHaX5E4g%2BqMKTFbl0NrEIP1CSKh%2FbYREsroz%2FLXvrI3U%2BfXiJckXmd5oCc5idvzPIdMDu%2FXKs1jowhkCHC4YJlygz61MyDyIbIMkwSaO8MaliufeAvSxBm1pGbJ4D2v7YY4PQ%3D%3D--M%2FQBWQ02n51vn5v6--KZVx%2FTgN%2BkNxnuMRfiZzUA%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+Set-Cookie: _interslice_session=wsPDwfSLoqvDMTu2mh6ZzSknCruJibvuEopNlqihIU5ILgdnkkfh6%2FXOP1%2BCQPHdwGHDoKjujFRbx5DbPLTuTY0PefPkfgzN09uy5nf87YTrIk4tXzQ2C8atSEglKazljaLst5DsNKO14NSSGdoDe2ZXZLe%2B9R2OrdYSECtymmTBpzGuP6GD8Zz3fEVKqW5zbX%2FvHyilYqBYgvvfQaG%2FPfxow9p8xLClk7v3ya3gdvBPqZcDmLkOo0PHIw%3D%3D--c5RipOCKNIbu7pJF--HVgmxHT63gIx0wkETCI3bw%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;resource&quot;: {
-    &quot;id&quot;: 1246,
-    &quot;amount&quot;: 100000,
-    &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: &quot;备注&quot;,
-    &quot;created_at&quot;: &quot;2021-10-22T11:12:58.181Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-22T11:12:58.181Z&quot;
+    &quot;id&quot;: 686,
+    &quot;tag_id&quot;: 1536,
+    &quot;record_id&quot;: 1248,
+    &quot;created_at&quot;: &quot;2021-10-22T11:12:58.437Z&quot;,
+    &quot;updated_at&quot;: &quot;2021-10-22T11:12:58.437Z&quot;
   }
 }</pre>
       </div>

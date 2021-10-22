@@ -45,8 +45,8 @@ RSpec.describe "Record", type: :request do
       get '/records'
       expect(response.status).to eq 200
     end
-    it 'get the right data' do
-      (1..11).to_a.each { |a| Record.create! amount: 10000, category: 'income', notes: '备注' }
+    it 'get the right data of record' do
+      (1..11).to_a.each { |a| Record.create! amount: 10000, category: 'income', notes: "备注#{a}123" }
       login_in
       get '/records'
       body = JSON.parse response.body
