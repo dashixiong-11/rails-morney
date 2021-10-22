@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Record API</title>
+    <title>Tag API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Record API</h1>
+      <h1>Tag API</h1>
 
       <div class="article">
-        <h2>创建记录</h2>
-        <h3>POST /records</h3>
+        <h2>获取标签</h2>
+        <h3>GET /tags</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -122,27 +122,11 @@ table th, table td {
             </thead>
             <tbody>
               <tr>
-                <td class="required">
-                    <span class="name">amount</span>
+                <td>
+                    <span class="name">page</span>
                 </td>
                 <td>
-                  <span class="description">金额</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">category</span>
-                </td>
-                <td>
-                  <span class="description">类型:1 outgoings|2 income</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">notes</span>
-                </td>
-                <td>
-                  <span class="description">备注</span>
+                  <span class="description">页码</span>
                 </td>
               </tr>
             </tbody>
@@ -153,32 +137,56 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=iUzJiPHKn3n%2F9fI9IYeZQ9iEKzmt89ULc3pia8QZjTW%2FW%2FHGTUJ8K504DtaEa%2B0IVixy40JY%2BHtloE2S40r3m5TRQiTPjwY8Y6dB0%2FAz8DMIGKaE%2Fp8RRYkCJxB%2F987YBZ0EPOCGmKzY1ZlhWIvDnjOGkvsq1gzotfmqbnHJpiXYtChPdwmVF51On33mrlFdy%2BvKMy0dCAW1MF8Vh6AzJC68j2i15hhKs4dfx%2BdeArjNTZhuf33QTUxiCQ%3D%3D--SwcT8ACqrceBqlDY--GEflERGdmi0MZMLHnFBqiQ%3D%3D</pre>
+Cookie: _interslice_session=Fx25RTHLxyU4xveh85gLjNt11nvqnf%2BEE9Qcuj%2FK8jaiC5qfmrBpynp3nxgvOLJmp0wjHUkhK%2FUZPQxKBeFa8d2V4qyOKUUfxGUg5jhFY4JsrpK2VLtvIzk7Ghu%2F8LvIs0EJpWCmo5aP4XI%2B8%2Bb0bHMDWCJuLEr50S0C6llulJH2SD3dZ3kFcet0LdE%2FWhd7mIcm4G8qM3J1u08FLaxA516kGal9DIbhJaHRlWEKmo84DaDiHyn3V2rR9g%3D%3D--6DBELgjbgzBQzauR--niVXqz9HUHoly%2BYA%2BNz1AQ%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">GET /tags?page=1</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">page: 1</pre>
 
-            <h4>Body</h4>
-            <pre class="request body">{"amount":10000,"category":"income","notes":"备注"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=92DIUCNvFmQIy30uF1jcUiAYBga7BFIXLK0BEXWXx7owjX%2BY5NelMaW6y9EN9%2BJQ219%2Bd001UnqjR%2Fh8tGeY8qs7uCy6PvQAa3BuYJyFnhXw5LwnJ%2B6GHF8eFVNW1%2FmKPuqdwfd241MZY1YefYNcTKhBcPyDvVIHmNevHgfImuVirJIN5wHb6c%2Ff%2B2a3RfCAqMtBEnMvnVJFedR3A8uHG6Klc9ddMkI9hDVm9QHtz%2BZWKDF9%2FjnOWhY5uA%3D%3D--lY5nmgZ0iKx2CIdr--GxqB%2BFbiYkF3jaSy6ZTwYQ%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+Set-Cookie: _interslice_session=EI7Egw1WcPD%2FJ6ywm2KGM9GK55qbzhPQW9JjfRYfPY2ItTURIgtZe9%2FUJCyqBFPNr6gdPj%2F%2BEWaxAIgvjIZ1kMCAfdrHz1hFiUbERIzGh%2FSIjIqCzL2bpgf0053jyefUZC97A%2FjE09uDadL%2F77QPpnlbrusweGNLtEdOXabi4DaTuuYNqpNJmP6%2Fi%2BRYc6d8lp1O%2FPFJHPNWB692HN9DH1ghQUs4dvhk6KrfV%2BpR9sxrwaQ6FBwZ6u5EXw%3D%3D--b5ad69ugGtzhJx2g--FTPoDv9Z4J5guBRuIdHYJg%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
-  &quot;resource&quot;: {
-    &quot;id&quot;: 327,
-    &quot;amount&quot;: 10000,
-    &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: &quot;备注&quot;,
-    &quot;created_at&quot;: &quot;2021-10-22T06:40:13.799Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-22T06:40:13.799Z&quot;
-  }
+  &quot;resources&quot;: [
+    {
+      &quot;id&quot;: 29,
+      &quot;name&quot;: &quot;test1&quot;,
+      &quot;created_at&quot;: &quot;2021-10-22T06:39:04.092Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T06:39:04.092Z&quot;
+    },
+    {
+      &quot;id&quot;: 30,
+      &quot;name&quot;: &quot;test2&quot;,
+      &quot;created_at&quot;: &quot;2021-10-22T06:39:04.098Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T06:39:04.098Z&quot;
+    },
+    {
+      &quot;id&quot;: 31,
+      &quot;name&quot;: &quot;test3&quot;,
+      &quot;created_at&quot;: &quot;2021-10-22T06:39:04.102Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T06:39:04.102Z&quot;
+    },
+    {
+      &quot;id&quot;: 32,
+      &quot;name&quot;: &quot;test4&quot;,
+      &quot;created_at&quot;: &quot;2021-10-22T06:39:04.107Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T06:39:04.107Z&quot;
+    },
+    {
+      &quot;id&quot;: 33,
+      &quot;name&quot;: &quot;test5&quot;,
+      &quot;created_at&quot;: &quot;2021-10-22T06:39:04.111Z&quot;,
+      &quot;updated_at&quot;: &quot;2021-10-22T06:39:04.111Z&quot;
+    }
+  ]
 }</pre>
       </div>
     </div>

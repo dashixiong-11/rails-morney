@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Record API</title>
+    <title>Tag API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Record API</h1>
+      <h1>Tag API</h1>
 
       <div class="article">
-        <h2>创建记录</h2>
-        <h3>POST /records</h3>
+        <h2>创建标签</h2>
+        <h3>POST /tags</h3>
 
           <h3>Parameters</h3>
           <table class="parameters table table-striped table-bordered table-condensed">
@@ -123,26 +123,10 @@ table th, table td {
             <tbody>
               <tr>
                 <td class="required">
-                    <span class="name">amount</span>
+                    <span class="name">name</span>
                 </td>
                 <td>
-                  <span class="description">金额</span>
-                </td>
-              </tr>
-              <tr>
-                <td class="required">
-                    <span class="name">category</span>
-                </td>
-                <td>
-                  <span class="description">类型:1 outgoings|2 income</span>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <span class="name">notes</span>
-                </td>
-                <td>
-                  <span class="description">备注</span>
+                  <span class="description">标签名</span>
                 </td>
               </tr>
             </tbody>
@@ -153,31 +137,29 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Content-Type: application/json
-Cookie: _interslice_session=iUzJiPHKn3n%2F9fI9IYeZQ9iEKzmt89ULc3pia8QZjTW%2FW%2FHGTUJ8K504DtaEa%2B0IVixy40JY%2BHtloE2S40r3m5TRQiTPjwY8Y6dB0%2FAz8DMIGKaE%2Fp8RRYkCJxB%2F987YBZ0EPOCGmKzY1ZlhWIvDnjOGkvsq1gzotfmqbnHJpiXYtChPdwmVF51On33mrlFdy%2BvKMy0dCAW1MF8Vh6AzJC68j2i15hhKs4dfx%2BdeArjNTZhuf33QTUxiCQ%3D%3D--SwcT8ACqrceBqlDY--GEflERGdmi0MZMLHnFBqiQ%3D%3D</pre>
+Cookie: _interslice_session=XDsWyIaPNjndnX0oCiYTw98RYSg2xmaqUN9zpQ%2Fdi6asr4UbFIQo%2B9POPIQu2yclCtsgxZL5TEObL5kI3cNvmQqkRjavN4fudz55FRjinOARW%2By4maASsfcH%2B4jtc0nKJX79gSNhQUl2k9UP7RTQBZK95MZm5wYsNY%2Fbn%2F7zFtgIN3Rhqd%2BbIHNKkW%2FhMyW%2FHMW%2BRVopvQmlr9lnRceLblsalJzYJdXIVZXJeZRkkXS%2FSHxj0peQp2jUJw%3D%3D--m2AiAo0jG9pXY%2FZI--KwZPV4QOHwSOGuzfOCXBVg%3D%3D</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">POST /records</pre>
+          <pre class="request route highlight">POST /tags</pre>
 
 
             <h4>Body</h4>
-            <pre class="request body">{"amount":10000,"category":"income","notes":"备注"}</pre>
+            <pre class="request body">{"name":"旅游"}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-Set-Cookie: _interslice_session=92DIUCNvFmQIy30uF1jcUiAYBga7BFIXLK0BEXWXx7owjX%2BY5NelMaW6y9EN9%2BJQ219%2Bd001UnqjR%2Fh8tGeY8qs7uCy6PvQAa3BuYJyFnhXw5LwnJ%2B6GHF8eFVNW1%2FmKPuqdwfd241MZY1YefYNcTKhBcPyDvVIHmNevHgfImuVirJIN5wHb6c%2Ff%2B2a3RfCAqMtBEnMvnVJFedR3A8uHG6Klc9ddMkI9hDVm9QHtz%2BZWKDF9%2FjnOWhY5uA%3D%3D--lY5nmgZ0iKx2CIdr--GxqB%2BFbiYkF3jaSy6ZTwYQ%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
+Set-Cookie: _interslice_session=tvGqDTWtpRQLKrCHDaLcudfVESQN8prSfevp23YtBwf5FuiWN4T3PPlBgyTOz8G7F5lT52xDRuBmIGQttu3vGmNIgQ1dptrDCaeiHSHC%2F69%2BCpgFNa5Kw%2FJ%2BZ5crTr309IVUfjVtaPwxSDy%2BLcqdT4FVmoZq8DPOUFUAPHscdIQZW18FavV6c9Lc6hJT27L7KjIwsM1SWBtamg2CnOb4o%2FVva07KtkYgZiFHwE8mLPZyHJdp9z1WW3IRQw%3D%3D--ANGOsJBdTH8CnHvM--uIxH5gh5DKaUfxeC5jhOWA%3D%3D; path=/; HttpOnly; SameSite=Lax</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;resource&quot;: {
-    &quot;id&quot;: 327,
-    &quot;amount&quot;: 10000,
-    &quot;category&quot;: &quot;income&quot;,
-    &quot;notes&quot;: &quot;备注&quot;,
-    &quot;created_at&quot;: &quot;2021-10-22T06:40:13.799Z&quot;,
-    &quot;updated_at&quot;: &quot;2021-10-22T06:40:13.799Z&quot;
+    &quot;id&quot;: 85,
+    &quot;name&quot;: &quot;旅游&quot;,
+    &quot;created_at&quot;: &quot;2021-10-22T06:40:13.974Z&quot;,
+    &quot;updated_at&quot;: &quot;2021-10-22T06:40:13.974Z&quot;
   }
 }</pre>
       </div>
