@@ -24,11 +24,7 @@ class RecordsController < ApplicationController
     head record.destroy ? :ok : :bad_request
   end
 
-  private #在此以下的方法都是私有的
-
-  def render_resources(resources)
-    render json: { resources: resources }
-  end
+  private
 
   def create_params
     params.permit(:amount, :category, :notes)

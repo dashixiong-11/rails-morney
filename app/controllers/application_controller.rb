@@ -17,6 +17,10 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def render_resources(resources)
+    render json: { resources: resources }
+  end
+
   def must_sign_in
     if current_user.nil?
       raise CustomError::MustSignInError #raise 以后错误 后面的代码就不会执行
