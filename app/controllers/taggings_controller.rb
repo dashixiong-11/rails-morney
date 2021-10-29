@@ -6,7 +6,7 @@ class TaggingsController < ApplicationController
   end
 
   def show
-    render_resource Record.find_by_id params[:id]
+    render_resource Tagging.find_by_id params[:id]
   end
 
   def create

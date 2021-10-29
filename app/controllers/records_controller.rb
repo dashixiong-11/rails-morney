@@ -10,7 +10,10 @@ class RecordsController < ApplicationController
   end
 
   def create
-    render_resource Record.create create_params
+    #record = Record.create create_params.merge
+    # record.user = current_user
+    # record.save
+    render_resource Record.create create_params.merge user: current_user
   end
 
   def update

@@ -14,8 +14,9 @@ module RspecApiDocumentation::DSL
   # DSL methods available inside the RSpec example.
   module Endpoint
     def login_in(user = nil)
-      user ||= User.create!(email: 'spec_test_helper@qq.com', password: '123456', password_confirmation: '123456')
-      no_doc do # 这个方法是为了不让此段代码生成文档
+      user ||= create(:user, email: 'spec_test_helper@qq.com',)
+      no_doc do
+        # 这个方法是为了不让此段代码生成文档
         client.post '/sessions', { email: user.email, password: user.password }
       end
       user

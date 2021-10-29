@@ -2,7 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Record" do
-  let(:record) { Record.create! amount: 100000, category: 'income', notes: '备注' }
+  let(:user) { create(:user) }
+  let(:record) { create :record }
   let(:id) { record.id }
   let(:amount) { 10000 }
   let(:category) { 'income' }
@@ -27,10 +28,10 @@ resource "Record" do
   end
 
   get '/records' do
-    (1..11).to_a.each { |a| Record.create! amount: 10000, category: 'income', notes: '备注' }
     parameter :page, '页码', type: :integer
     let(:page) { 1 }
     example '获取记录' do
+      (1..11).to_a.each { |a| create :record }
       login_in
       do_request(page: page)
       expect(status).to eq 200

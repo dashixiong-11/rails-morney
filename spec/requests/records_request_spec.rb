@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Record", type: :request do
+  before :each do
+    @user = create(:user)
+  end
   context 'create' do
     it "create a record" do
       login_in
@@ -23,14 +26,14 @@ RSpec.describe "Record", type: :request do
   end
   context 'destroy' do
     it 'cant delete a record without sign in' do
-      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      record = create :record
       delete "/records/#{record.id}"
       expect(response.status).to eq 401
     end
 
     it 'can delete a record' do
       login_in
-      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      record = create :record
       delete "/records/#{record.id}"
       expect(response.status).to eq 200
     end
@@ -46,7 +49,7 @@ RSpec.describe "Record", type: :request do
       expect(response.status).to eq 200
     end
     it 'get the right data of record' do
-      (1..11).to_a.each { |a| Record.create! amount: 10000, category: 'income', notes: "备注#{a}123" }
+      (1..11).to_a.each { |a| create :record, user: @user }
       login_in
       get '/records'
       body = JSON.parse response.body
@@ -57,13 +60,13 @@ RSpec.describe "Record", type: :request do
 
   context 'show' do
     it 'can not get a record without sign in' do
-      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      record = create :record
       get "/records/#{record.id}"
       expect(response.status).to eq 401
     end
 
     it 'can get a record with sign in' do
-      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      record = create :record
       login_in
       get "/records/#{record.id}"
       expect(response.status).to eq 200
@@ -78,14 +81,14 @@ RSpec.describe "Record", type: :request do
 
   context 'update' do
     it 'can not update a record without sign in' do
-      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      record = create :record
       patch "/records/#{record.id}", params: { amount: 20000, category: 'outgoings', notes: '更新了' }
       expect(response.status).to eq 401
     end
 
     it 'can update a record with sign in' do
       login_in
-      record = Record.create! amount: 10000, category: 'income', notes: '备注'
+      record = create :record
       patch "/records/#{record.id}", params: { amount: 20000, category: 'outgoings', notes: '更新了' }
       body = JSON.parse response.body
       expect(body['resource']['amount']).to eq 20000

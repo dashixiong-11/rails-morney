@@ -2,7 +2,8 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource "Taggings" do
-  let(:record) { Record.create! amount: 100000, category: 'income', notes: '备注' }
+  let(:user) { create(:user) }
+  let(:record) { create :record }
   let(:record_id) { record.id }
   let(:tag) { Tag.create! name: 'test' }
   let(:tag_id) { tag.id }
@@ -12,6 +13,7 @@ resource "Taggings" do
     Tagging.create! record: record, tag: Tag.create!(name: "test#{a}")
   end }
   let(:create_taggings) {
+    tagging
     taggings
     nil
   }
@@ -46,6 +48,7 @@ resource "Taggings" do
 
   get '/taggings/:id' do
     example '获取标记详情' do
+      @id
       login_in
       do_request
       expect(status).to eq 200
