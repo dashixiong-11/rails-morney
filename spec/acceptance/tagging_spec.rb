@@ -5,12 +5,12 @@ resource "Taggings" do
   let(:user) { create(:user) }
   let(:record) { create :record }
   let(:record_id) { record.id }
-  let(:tag) { Tag.create! name: 'test' }
+  let(:tag) { create :tag }
   let(:tag_id) { tag.id }
-  let(:tagging) { Tagging.create! tag: tag, record: record }
+  let(:tagging) { create :tagging, tag: tag, record: record }
   let(:id) { tagging.id }
   let(:taggings) { (1..11).to_a.map do |a|
-    Tagging.create! record: record, tag: Tag.create!(name: "test#{a}")
+    create :tagging, record: record, tag: tag
   end }
   let(:create_taggings) {
     tagging

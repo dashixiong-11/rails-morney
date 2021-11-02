@@ -4,9 +4,9 @@ RSpec.describe "Taggings", type: :request do
   before :each do
     @user = User.create! email: '21s21dsa@qq.com', password: '123456', password_confirmation: '123456'
     @record = create :record, user: @user
-    @tag = Tag.create! name: 'test'
-    @tagging = Tagging.create! tag: @tag, record: @record
-    (1..11).to_a.each { |a| Tagging.create! record: @record, tag: Tag.create!(name: "test#{a}") }
+    @tag = create :tag
+    @tagging = create :tagging, tag: @tag, record: @record
+    (1..11).to_a.each { |a| create :tagging }
   end
   context 'create' do
     it "create a tagging" do

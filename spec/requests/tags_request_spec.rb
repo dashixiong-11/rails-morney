@@ -5,8 +5,8 @@ RSpec.describe "Tags", type: :request do
     it "create a tag" do
       login_in
       post '/tags', params: { name: '旅游' }
-      expect(response.status).to eq 200
       body = JSON.parse response.body
+      expect(response.status).to eq 200
       expect(body['resource']['id']).to be
     end
     it "can not create a tag without name" do
@@ -23,14 +23,14 @@ RSpec.describe "Tags", type: :request do
   end
   context 'destroy' do
     it 'cant delete a tag without sign in' do
-      tag = Tag.create! name: '旅游'
+      tag = create :tag
       delete "/tags/#{tag.id}"
       expect(response.status).to eq 401
     end
 
     it 'can delete a record' do
       login_in
-      tag = Tag.create! name: '旅游'
+      tag = create :tag
       delete "/tags/#{tag.id}"
       expect(response.status).to eq 200
     end
@@ -46,7 +46,7 @@ RSpec.describe "Tags", type: :request do
       expect(response.status).to eq 200
     end
     it 'get the right data' do
-      (1..11).to_a.each { |a| Tag.create! name: "test#{a}" }
+      (1..11).to_a.each { |a| create :tag }
       login_in
       get '/tags'
       body = JSON.parse response.body
@@ -57,13 +57,13 @@ RSpec.describe "Tags", type: :request do
 
   context 'show' do
     it 'can not get a tag without sign in' do
-      tag = Tag.create! name: '旅游'
+      tag = create :tag
       get "/tags/#{tag.id}"
       expect(response.status).to eq 401
     end
 
     it 'can get a tag with sign in' do
-      tag = Tag.create! name: '旅游'
+      tag = create :tag
       login_in
       get "/tags/#{tag.id}"
       expect(response.status).to eq 200
@@ -78,14 +78,14 @@ RSpec.describe "Tags", type: :request do
 
   context 'update' do
     it 'can not update a tag without sign in' do
-      tag = Tag.create! name: '旅游'
+      tag = create :tag
       patch "/tags/#{tag.id}", params: { name: '游戏' }
       expect(response.status).to eq 401
     end
 
     it 'can update a tag with sign in' do
       login_in
-      tag = Tag.create! name: '旅游'
+      tag = create :tag
       patch "/tags/#{tag.id}", params: { name: '游戏' }
       body = JSON.parse response.body
       expect(body['resource']['name']).to eq '游戏'

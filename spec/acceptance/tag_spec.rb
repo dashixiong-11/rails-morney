@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
-resource "Tag" do
-  let(:tag) { Tag.create! name: '旅游' }
+resource "Tags" do
+  let(:tag) { create :tag }
   let(:id) { tag.id }
   let(:name) { '旅游' }
   post "/tags" do
@@ -23,10 +23,10 @@ resource "Tag" do
   end
 
   get '/tags' do
-    (1..11).to_a.each { |a| Tag.create! name: "test#{a}" }
     parameter :page, '页码', type: :integer
     let(:page) { 1 }
     example '获取标签' do
+      (1..11).to_a.each { |a| create :tag }
       login_in
       do_request(page: page)
       expect(status).to eq 200
